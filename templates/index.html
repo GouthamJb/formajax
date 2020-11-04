@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+
+    
+    <title>Contact Us</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <form
+        class="text-center"
+        border
+        border-light
+        p-5
+        method="POST"
+        id="post-form"
+        name="contact-form"
+      >
+        {% csrf_token %}
+        <div class="jumbotron mt-4">
+          <p class="h1 mb-4 mt-4">Contact us</p>
+          <div class="row">
+            <div class="col-md-6 offset-md-3">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  name="name"
+                  aria-describedby="nameHelp"
+                  placeholder="Name"
+                  pattern="[a-zA-Z ]+"
+                  required
+                />
+                <small id="nameHelp" class="form-text text-muted"
+                  ></small
+                >
+              </div>
+
+              <div class="form-group">
+                <!-- <label for="name">Email</label> -->
+                <input
+                  type="email"
+                  class="form-control mt-4"
+                  id="email"
+                  name="email"
+                  aria-describedby="emailHelp"
+                  placeholder="Email"
+                  pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <!-- <label for="name">Phone</label> -->
+                <input
+                  type="tel"
+                  class="form-control mt-4"
+                  id="phone"
+                  name="phone"
+                  aria-describedby="PhoneHelp"
+                  placeholder="Phone"
+                  pattern="[0-9]{10}"
+                  maxlength="10"
+                />
+              </div>
+
+              <div class="form-group">
+                <!-- <label for="description">Description</label> -->
+                <textarea
+                  placeholder="Description"
+                  required
+                  class="form-control mt-4"
+                  id="description"
+                  rows="3"
+                  minlength="20"
+
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-primary mt-4"
+            value="Submit Info"
+          >
+            Submit 
+          </button>
+
+          <a href="{% url 'submissions' %}" class="btn btn-info mt-4"
+            >Database</a
+          >
+        </div>
+      </form>
+    </div>
+    <div style="background-color: aquamarine;"><p id="successfield"></p></div>
+    <div style="background-color: red;"><p id="errorfield"></p></div>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script> -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"
+      integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="{% static 'script.js' %}"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
