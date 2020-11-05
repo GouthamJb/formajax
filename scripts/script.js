@@ -18,10 +18,10 @@ $(document).ready(function(){
             
            },
            
-           success: function (json) {
+           success: function (textStatus) {
              document.getElementById("post-form").reset();
              document.getElementById("successfield").innerHTML="Form submitted successfully (AJAX Worked) ";
-             
+             console.log(textStatus);
            },
            error: function (xhr, errmsg, err) {
             document.getElementById("errorfield").innerHTML="Form submission failure (Error in AJAX)";
