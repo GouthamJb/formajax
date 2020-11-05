@@ -121,11 +121,11 @@ USE_TZ = True
 
 
 
-'''STATIC_ROOT = BASE_DIR / 'static'''
+STATIC_ROOT = BASE_DIR / 'static'
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (
+'''STATICFILES_DIRS = (
     BASE_DIR / 'static',
-)
+)'''
 
