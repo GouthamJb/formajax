@@ -25,7 +25,7 @@ SECRET_KEY = 'w#2e6j+3y*rht%qpbu2339xfet!#33l@sukayqsw87o$xh8)g7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['contact-form-django.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['contact-form-django.herokuapp.com','127.0.0.1','djanfo-app-contact.herokuapp.com']
 
 
 # Application definition
