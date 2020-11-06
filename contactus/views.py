@@ -13,17 +13,35 @@ def index(request):
         email=request.POST.get('email')
         phone=request.POST.get('phone')
         description=request.POST.get('description')
-
-        Contact.objects.create(
+        contacts = Contact.objects.all()
+        contactlist = list(contacts)
+        
+        '''looping through all contacts in list and comparing email'''
+    
+        
+        for i in range(0,len(contactlist)):
+            if contactlist[i].email.lower() == email.lower():
+                return JsonResponse(data={"message":"This email already exist"},status=500)
+            
+        
+        s=Contact.objects.create(
             name = name,
             email= email,
             phone = phone,
             description = description
         )
-        contacts = Contact.objects.all()
-        temp = list(contacts)
-        print(temp[-1].id,temp[-1].email)
-        return HttpResponse("id=" + str(temp[-1].id) + "\nname="+temp[-1].name+"\nemail="+temp[-1].email+ "\nphone="+ temp[-1].phone + "\ndescription=" +temp[-1].description )
+        
+        
+        temp = {
+            "id" : s.id,
+            "name" : s.name,
+            "email" : s.email,
+            "phone" : s.phone,
+            "description" : s.description
+        }
+        
+        
+        return JsonResponse(temp)
     form = forms.ContactForm()
     return render(request, 'index.html', {'form': form})
 
