@@ -7,3 +7,8 @@
 7.url mapping was done in urls.py.
 8.passed the JSON data to console
 9.email was made unique
+
+![screenshot 1](Screenshot from 2020-11-05 19-11-18.png)
+![screenshot 2](Screenshot from 2020-11-05 19-13-36.png)
+![screenshot 3](Screenshot from 2020-11-05 19-12-39.png)
+![screenshot 4](Screenshot from 2020-11-06 11-33-07.png)
